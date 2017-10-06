@@ -17,3 +17,6 @@ If you have a change to propose, create a pull request. Please create a Pull Req
 ## Source
 
 All this data was generated using [IBGE's geo data](http://www.ibge.gov.br).
+
+## License
+[MIT License](LICENSE) (c) 2017 Luiz Pedone
