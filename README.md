@@ -10,10 +10,6 @@ If you find any problem with this dataset, please let me know.
 
 If you have a change to propose, create a pull request. Please create a Pull Request changing only the raw data, the minified will be generated after your changes are successfully merged to master.
 
-## TODO list
-
-- Add Topojson data
-
 ## Source
 
 All this data was generated using [IBGE's geo data](http://www.ibge.gov.br).
