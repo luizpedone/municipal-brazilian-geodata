@@ -1,0 +1,27 @@
+name: Verify minified/ is up to date
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  verify-minified:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate minified/ from data/
+        run: python3 scripts/build_minified.py
+
+      - name: Fail if minified/ doesn't match what's committed
+        run: |
+          if ! git diff --exit-code -- minified/; then
+            echo "::error::minified/ is out of date with data/. Run 'python3 scripts/build_minified.py' and commit the result." >&2
+            exit 1
+          fi
